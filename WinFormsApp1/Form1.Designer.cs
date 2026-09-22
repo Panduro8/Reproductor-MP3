@@ -46,14 +46,13 @@
             label1.AutoSize = true;
             label1.Location = new Point(29, 18);
             label1.Name = "label1";
-            label1.Size = new Size(100, 15);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 0;
-            label1.Text = "Reproductor MP3";
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(29, 43);
+            lblTitulo.Location = new Point(28, 23);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(123, 15);
             lblTitulo.TabIndex = 1;
@@ -64,7 +63,7 @@
             btnPlay.BackColor = Color.Lime;
             btnPlay.Font = new Font("Microsoft Sans Serif", 11F);
             btnPlay.ForeColor = SystemColors.ControlLightLight;
-            btnPlay.Location = new Point(93, 293);
+            btnPlay.Location = new Point(92, 273);
             btnPlay.Name = "btnPlay";
             btnPlay.Size = new Size(95, 46);
             btnPlay.TabIndex = 3;
@@ -77,7 +76,7 @@
             btnStop.BackColor = Color.Red;
             btnStop.Font = new Font("Microsoft Sans Serif", 11F);
             btnStop.ForeColor = SystemColors.ControlLightLight;
-            btnStop.Location = new Point(268, 293);
+            btnStop.Location = new Point(267, 273);
             btnStop.Name = "btnStop";
             btnStop.Size = new Size(95, 46);
             btnStop.TabIndex = 4;
@@ -89,7 +88,7 @@
             // 
             pictureBox1.BackColor = SystemColors.Control;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(115, 128);
+            pictureBox1.Location = new Point(114, 108);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(223, 141);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -105,7 +104,7 @@
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(lblArchivo);
-            panel1.Location = new Point(29, 61);
+            panel1.Location = new Point(28, 41);
             panel1.Name = "panel1";
             panel1.Size = new Size(402, 37);
             panel1.TabIndex = 6;
@@ -124,15 +123,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(463, 376);
+            ClientSize = new Size(463, 344);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Controls.Add(btnStop);
             Controls.Add(btnPlay);
             Controls.Add(lblTitulo);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
-            Text = "Form1";
+            Text = "Reproductor MP3";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

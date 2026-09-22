@@ -6,7 +6,7 @@ namespace WinFormsApp1
     {
         // Objeto que se encargará de reproducir el audio
         private WindowsMediaPlayer reproductor;
-        
+
         // Variable para almacenar la ruta del archivo MP3
         private string rutaArchivo = "";
 
@@ -16,6 +16,8 @@ namespace WinFormsApp1
             InitializeComponent();
             // Inicializamos la instancia del reproductor
             reproductor = new WindowsMediaPlayer();
+            //Evita que reproduzca un audio
+            reproductor.settings.autoStart = false;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e) { }
@@ -78,6 +80,11 @@ namespace WinFormsApp1
                 MessageBox.Show("Error al detener la reproducción: " + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
