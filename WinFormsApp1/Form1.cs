@@ -28,7 +28,7 @@ namespace WinFormsApp1
         {
             try
             {
-                // Requisito 3: Si no hay un archivo seleccionado, abre el explorador
+                //Si no hay un archivo seleccionado, abre el explorador
                 if (string.IsNullOrEmpty(rutaArchivo))
                 {
                     openFileDialog1.Filter = "Archivos MP3 (*.mp3)|*.mp3|Todos los archivos (*.*)|*.*";
@@ -38,23 +38,23 @@ namespace WinFormsApp1
                     if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     {
                         rutaArchivo = openFileDialog1.FileName;
-                        // Requisito 5: Muestra solo el nombre del archivo en el Label
+                        //Muestra solo el nombre del archivo en el Label
                         lblArchivo.Text = openFileDialog1.SafeFileName;
                     }
                     else
                     {
-                        // Requisito 8: Si el usuario cancela la selección, salimos sin hacer nada
+                        //Si el usuario cancela la selección, salimos sin hacer nada
                         return;
                     }
                 }
 
-                // Requisito 4: Reproduce el archivo
+                //Reproduce el archivo
                 reproductor.URL = rutaArchivo;
                 reproductor.controls.play();
             }
             catch (Exception ex)
             {
-                // Requisito 8: Manejo de errores
+                //Manejo de errores
                 MessageBox.Show("No se pudo reproducir el archivo: " + ex.Message,
                                 "Error de reproducción", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -69,7 +69,7 @@ namespace WinFormsApp1
         {
             try
             {
-                // Requisito 6: Detiene la reproducción
+                //Detiene la reproducción
                 if (reproductor != null)
                 {
                     reproductor.controls.stop();
